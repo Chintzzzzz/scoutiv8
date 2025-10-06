@@ -38,7 +38,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section Trial */}
       <section id="services" className="py-20 bg-slate-800/50">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-white text-center mb-16">
