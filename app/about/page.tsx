@@ -1,21 +1,23 @@
+import Link from 'next/link';
+
 export default function Aboutpage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       {/* Navigation */}
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="/" className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
+          <Link href="/" className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
             Scout<span className="text-blue-400">iv8</span>
-          </a>
+          </Link>
           <div className="hidden md:flex space-x-8">
-            <a href="/#services" className="text-white hover:text-blue-400 transition-colors">Services</a>
-            <a href="/#about" className="text-white hover:text-blue-400 transition-colors">About Paul</a>
-            <a href="/#pricing" className="text-white hover:text-blue-400 transition-colors">Pricing</a>
-            <a href="/about" className="text-blue-400 font-semibold">About Us</a>
+            <Link href="/#services" className="text-white hover:text-blue-400 transition-colors">Services</Link>
+            <Link href="/#about" className="text-white hover:text-blue-400 transition-colors">About Paul</Link>
+            <Link href="/#pricing" className="text-white hover:text-blue-400 transition-colors">Pricing</Link>
+            <Link href="/about" className="text-blue-400 font-semibold">About Us</Link>
           </div>
-          <a href="/" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
+          <Link href="/" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
             Back to Home
-          </a>
+          </Link>
         </div>
       </nav>
 
@@ -75,10 +77,10 @@ export default function Aboutpage() {
                 Deploying experienced and qualified professional scouts to observe the player in their grassroots environment and compile a detailed player scouting report.
               </p>
               <p>
-                Focusing on the player's attributes and development needs, forms the basis of the Individual Development Plan (IDP) for the player.
+                Focusing on the player&apos;s attributes and development needs, forms the basis of the Individual Development Plan (IDP) for the player.
               </p>
               <p>
-                Using the vast football experience and network of the company founder and Director, the player will receive, as part of their IDP, recommendations on relevant courses available with some of Scotland's leading professionals across a wide scope of essential support functions, in line with the player's individual development needs and their own aims and objectives.
+                Using the vast football experience and network of the company founder and Director, the player will receive, as part of their IDP, recommendations on relevant courses available with some of Scotland&apos;s leading professionals across a wide scope of essential support functions, in line with the player&apos;s individual development needs and their own aims and objectives.
               </p>
             </div>
           </div>
@@ -93,7 +95,7 @@ export default function Aboutpage() {
               How is Performance Assessed and Individual Programmes Delivered?
             </h2>
             <p className="text-lg text-gray-300 text-center mb-12 max-w-4xl mx-auto">
-              Members who subscribe to the business will unlock priority access and members only discounts to the country's leading specialist coaching programmes which aids and supports the player's individual development across all 4 corners of player development.
+              Members who subscribe to the business will unlock priority access and members only discounts to the country&apos;s leading specialist coaching programmes which aids and supports the player&apos;s individual development across all 4 corners of player development.
             </p>
 
             {/* 4 Corners Grid */}
@@ -179,13 +181,13 @@ export default function Aboutpage() {
             <h2 className="text-3xl font-bold text-blue-400 mb-6">How is Player Performance Recorded and Monitored?</h2>
             <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
               <p>
-                Players who subscribe as members of the business will receive access to the business app, which they can use to access their own private account. The player's account will give them direct access to their scouting report, IDP and to their individual programmes. They will have messaging features which will allow them to have direct contact with the coaching and development staff, for advice and support.
+                Players who subscribe as members of the business will receive access to the business app, which they can use to access their own private account. The player&apos;s account will give them direct access to their scouting report, IDP and to their individual programmes. They will have messaging features which will allow them to have direct contact with the coaching and development staff, for advice and support.
               </p>
               <p>
                 Through the app, which can be accessed via iPhone and Android devices as well as Laptop/Tablet, players can monitor their own development and recovery feedback reports from all coaches they work with.
               </p>
               <p>
-                Physical testing sessions which will utilise the same testing battery used by professional clubs will be available for members to purchase. The player's testing data will be made available to the player via their private account on the app.
+                Physical testing sessions which will utilise the same testing battery used by professional clubs will be available for members to purchase. The player&apos;s testing data will be made available to the player via their private account on the app.
               </p>
               <p>
                 Members will also receive bonus features including content from current and ex professional players and coaches, giving insight to their own football journey and experiences.
@@ -202,7 +204,7 @@ export default function Aboutpage() {
             <h2 className="text-3xl font-bold text-green-400 mb-6">Who is Eligible to Subscribe as a Member?</h2>
             <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
               <p>
-                The business will be open to anyone, boys and girls from the age of 8 years old. There is no upper age cap as individual circumstances and player's objectives and support needs will always be considered.
+                The business will be open to anyone, boys and girls from the age of 8 years old. There is no upper age cap as individual circumstances and player&apos;s objectives and support needs will always be considered.
               </p>
               <p>
                 Although primarily aimed at children and youth age grassroots players looking to enhance their development and performance, support can also be provided for players registered with professional clubs who would like access to the additional support network provided by the business.
@@ -224,7 +226,7 @@ export default function Aboutpage() {
             <h2 className="text-3xl font-bold text-purple-400 mb-6">How Much Will It Cost and How Do I Pay?</h2>
             <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
               <p>
-                A monthly subscription which will allow access to the player's private account and to the many features on the app including player IDP and exclusive member only discounts and bonus content is required.
+                A monthly subscription which will allow access to the player&apos;s private account and to the many features on the app including player IDP and exclusive member only discounts and bonus content is required.
               </p>
               <p>
                 Professional scouting reports, physical testing sessions and all specialist coaching programmes can be purchased directly via the app.
@@ -269,12 +271,12 @@ export default function Aboutpage() {
             Join our holistic player development programme and unlock your full potential on and off the field.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+            <Link href="/" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
               Get Your Scout Report
-            </a>
-            <a href="/#pricing" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+            </Link>
+            <Link href="/#pricing" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
               View Pricing
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -304,7 +306,7 @@ export default function Aboutpage() {
             <div>
               <h4 className="text-white font-semibold mb-4">About</h4>
               <ul className="text-gray-400 space-y-2">
-                <li><a href="/about" className="hover:text-blue-400 transition-colors">About Us</a></li>
+                <li><Link href="/about" className="hover:text-blue-400 transition-colors">About Us</Link></li>
                 <li>Paul Cooper</li>
                 <li>Our Method</li>
                 <li>Success Stories</li>
