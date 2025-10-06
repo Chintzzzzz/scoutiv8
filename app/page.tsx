@@ -11,6 +11,7 @@ export default function Home() {
             <a href="#services" className="text-white hover:text-blue-400 transition-colors">Services</a>
             <a href="#about" className="text-white hover:text-blue-400 transition-colors">About Paul</a>
             <a href="#pricing" className="text-white hover:text-blue-400 transition-colors">Pricing</a>
+            <a href="/about" className="text-white hover:text-blue-400 transition-colors">About Us</a>
           </div>
           <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
             Book Session
@@ -288,6 +289,7 @@ export default function Home() {
             <div>
               <h4 className="text-white font-semibold mb-4">About</h4>
               <ul className="text-gray-400 space-y-2">
+                <li><a href="/about" className="hover:text-blue-400 transition-colors">About Us</a></li>
                 <li>Paul Cooper</li>
                 <li>Our Method</li>
                 <li>Success Stories</li>
