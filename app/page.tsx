@@ -1,49 +1,181 @@
 import Link from 'next/link';
+import { FadeInSection } from "@/components/fadeIn";
+import { FaFire } from "react-icons/fa6";
+import { GiPush, GiSoccerKick } from "react-icons/gi";
+import { MdScience } from "react-icons/md";
+import { VscFeedback } from "react-icons/vsc";
+import { IoAccessibilitySharp } from "react-icons/io5";
+import Image from "next/image";
+
+
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <div>
       {/* Navigation */}
-      <nav className="container mx-auto px-6 py-4">
+      <div className="px-6 pt-1 sticky top-6 z-20 border-white/10 rounded-3xl shadow-lg max-w-5xl mx-auto"
+      style={{
+      backdropFilter: 'blur(34px)',
+      backgroundColor: 'rgba(0, 0, 0, 0.25)',
+      }}>
+      <nav className="container mx-auto px-5 py-1 border-white/10 shadow-lg rounded-3xl">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-white">
-            Scout<span className="text-blue-400">iv8</span>
-          </div>
+          {/* Clickable Logo */}
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/s8_transparent.png" // <-- place your logo image in /public/logo.png
+              alt="Scoutiv8 Logo"
+              width={100}
+              height={60}
+              className="rounded-md hover:scale-105 transition-transform duration-200 cursor-pointer"
+            />
+          </Link>
           <div className="hidden md:flex space-x-8">
-            <a href="#services" className="text-white hover:text-blue-400 transition-colors">Services</a>
-            <a href="#about" className="text-white hover:text-blue-400 transition-colors">About Paul</a>
-            <a href="#pricing" className="text-white hover:text-blue-400 transition-colors">Pricing</a>
-            <Link href="/about" className="text-white hover:text-blue-400 transition-colors">About Us</Link>
+            <a href="#services" className="text-white hover:text-[#daba0bec] transition-colors">
+              Services
+            </a>
+            <a href="#about" className="text-white hover:text-[#daba0bec] transition-colors">
+              About Paul
+            </a>
+            <a href="#pricing" className="text-white hover:text-[#daba0bec] transition-colors">
+              Our Team
+            </a>
+            <a href="#pricing" className="text-white hover:text-[#daba0bec] transition-colors">
+              Pricing
+            </a>
           </div>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
+          <button className="bg-[#daba0bec] hover:bg-#FFD700 text-[black] px-6 py-2 rounded-lg transition-colors font-semibold">
             Book Session
           </button>
         </div>
       </nav>
+      </div>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-20 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+      <section className="relative py-40 bg-center bg-cover" style={{ backgroundImage: "url('/fb1.jpg')" }}>
+      
+      {/* Dark blurred overlay */}
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+      {/* Content */}
+      <div className="container mx-auto px-6 text-center relative z-10">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent inline-block">
           Get Your Professional
-          <span className="text-blue-400 block">Scout Report</span>
+          <span className="text-[#daba0bec] block">Scout Report</span>
         </h1>
-        <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-          Professional-grade football analysis for everyday players. Get the reality check you need to take your game to the next level.
+        <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+          Player centred individual football development.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+          <button
+            className="bg-[#daba0bec] text-black border-2 border-yellow-400 px-8 py-4 rounded-lg text-lg font-semibold 
+             transition-all duration-300 transform hover:scale-105">
             Get Your Report Now
           </button>
-          <button className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
-            Book 1-on-1 with Paul
-          </button>
+        </div>
+      </div>
+      </section>
+
+
+
+      {/* Cards Section */}
+      <section className="py-20 bg-[black]/90">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl text-center leading-relaxed font-bold bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent mb-5">
+            {"Empowering Every Player's Journey"}
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {/* Card 1 */}
+            <FadeInSection delay={0}>
+              <div className="w-118 h-70 bg-slate-700/30 backdrop-blur-sm p-8 rounded-xl border border-slate-600">
+                <h3 className="text-2xl font-bold text-[#daba0bec] mb-2 flex items-center gap-2">
+                  <FaFire className="text-3xl text-[#daba0bec]" />
+                  Our Motivation
+                </h3>
+                <p className="font-semibold text-white mb-4">Helping Players Reach Their Potential</p>
+                <p className="text-gray-400">
+                  We aim to provide tailored individual support for grassroots players — male and female — helping them become the best version of themselves both on and off the field.
+                </p>
+              </div>
+            </FadeInSection>
+
+            {/* Card 2 */}
+            <FadeInSection delay={150}>
+              <div className="w-118 h-70 bg-slate-700/30 backdrop-blur-sm p-8 rounded-xl border border-slate-600">
+                <h3 className="text-2xl font-bold text-[#daba0bec] mb-2 flex items-center gap-2">
+                  <GiPush className="text-6xl text-[#daba0bec]" />
+                  Challenges in Grassroots Development
+                </h3>
+                <p className="font-semibold text-white mb-4">Bridging the Support Gap</p>
+                <p className="text-gray-400">
+                  Many young players lack an Individual Development Plan (IDP) and access to specialist coaches. Our mission is to fill that gap with expert guidance and structured development goals.
+                </p>
+              </div>
+            </FadeInSection>
+
+            {/* Card 3 */}
+            <FadeInSection delay={300}>
+              <div className="w-118 h-70 bg-slate-700/30 backdrop-blur-sm p-8 rounded-xl border border-slate-600">
+                <h3 className="text-2xl font-bold text-[#daba0bec] mb-2 flex items-center gap-2">
+                  <MdScience className="text-4xl text-[#daba0bec]" />
+                  Our Methodology
+                </h3>
+                <p className="font-semibold text-white mb-4">From Observation to Action</p>
+                <p className="text-gray-400">
+                  {"Experienced scouts assess players in their natural environment, producing detailed reports that inform each player's personalised IDP. Recommendations for specialist courses and coaching are then tailored to individual goals."}
+                </p>
+              </div>
+            </FadeInSection>
+
+            {/* Card 4 */}
+            <FadeInSection delay={450}>
+              <div className="w-118 h-70 bg-slate-700/30 backdrop-blur-sm p-8 rounded-xl border border-slate-600">
+                <h3 className="text-2xl font-bold text-[#daba0bec] mb-2 flex items-center gap-2">
+                  <GiSoccerKick className="text-4xl text-[#daba0bec]" />
+                  Player Development Approach
+                </h3>
+                <p className="font-semibold text-white mb-4">The 4-Corner Model</p>
+                <p className="text-gray-400">
+                  Our programmes target all areas of player growth — Technical, Tactical, Physical, and Psychological — delivered by top coaches, ex-professionals, sports scientists, and performance experts.
+                </p>
+              </div>
+            </FadeInSection>
+
+            {/* Card 5 */}
+            <FadeInSection delay={600}>
+              <div className="w-118 h-70 bg-slate-700/30 backdrop-blur-sm p-8 rounded-xl border border-slate-600">
+                <h3 className="text-2xl font-bold text-[#daba0bec] mb-2 flex items-center gap-2">
+                  <VscFeedback className="text-4xl text-[#daba0bec]" />
+                  Monitoring & Feedback
+                </h3>
+                <p className="font-semibold text-white mb-4">Track Progress with Our App</p>
+                <p className="text-gray-400">
+                  Members gain access to a private account on our app to view reports, IDPs, training data, and feedback from coaches. The app also offers chat support, physical testing data, and exclusive insights from professionals.
+                </p>
+              </div>
+            </FadeInSection>
+
+            {/* Card 6 */}
+            <FadeInSection delay={750}>
+              <div className="w-118 h-70 bg-slate-700/30 backdrop-blur-sm p-8 rounded-xl border border-slate-600">
+                <h3 className="text-2xl font-bold text-[#daba0bec] mb-2 flex items-center gap-2">
+                  <IoAccessibilitySharp className="text-4xl text-[#daba0bec]" />
+                  Membership & Access
+                </h3>
+                <p className="font-semibold text-white mb-4">Join the Journey</p>
+                <p className="text-gray-400">
+                  Open to boys and girls aged 8+, with no upper limit. A monthly subscription unlocks all features, discounts, and exclusive content. While we don’t guarantee professional trials, we help every player maximise their development and enjoyment.
+                </p>
+              </div>
+            </FadeInSection>
+          </div>
         </div>
       </section>
 
       {/* Services Section Trial2 */}
-      <section id="services" className="py-20 bg-slate-800/50">
+      <section id="services" className="py-20 bg-black/90">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-white text-center mb-16">
+          <h2 className="text-4xl font-bold text-center leading-relaxed bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent mb-10">
             Professional Analysis in Four Key Areas
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -84,7 +216,7 @@ export default function Home() {
             </div>
 
             <div className="bg-slate-700/30 backdrop-blur-sm p-8 rounded-xl border border-slate-600">
-              <div className="w-16 h-16 bg-purple-600 rounded-lg flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-yellow-400 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
@@ -122,51 +254,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Paul Section */}
-      <section id="about" className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-white mb-6">Meet Paul Cooper</h2>
-              <p className="text-gray-300 mb-6 text-lg">
-                With over 15 years of professional scouting experience, Paul has evaluated talent for Premier League clubs and identified future stars before they broke through.
-              </p>
-              <p className="text-gray-300 mb-8">
-                Now he&apos;s bringing that same professional-grade analysis to everyday players who want an honest assessment of their abilities and a clear path to improvement.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full mr-4"></div>
-                  <span className="text-gray-300">15+ years in professional football scouting</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full mr-4"></div>
-                  <span className="text-gray-300">Former scout for Premier League clubs</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full mr-4"></div>
-                  <span className="text-gray-300">UEFA coaching qualifications</span>
-                </div>
-              </div>
-            </div>
-            <div className="bg-slate-700/30 backdrop-blur-sm p-8 rounded-xl border border-slate-600">
-              <h3 className="text-2xl font-bold text-white mb-4">1-on-1 Guidance Sessions</h3>
-              <p className="text-gray-300 mb-6">
-                Book a personal consultation with Paul to discuss your report, get specific training recommendations, and create a development plan.
-              </p>
-              <ul className="text-gray-400 space-y-3 mb-6">
-                <li>• 60-minute video consultation</li>
-                <li>• Personalized development roadmap</li>
-                <li>• Training drill recommendations</li>
-                <li>• Career pathway guidance</li>
-              </ul>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors">
-                Book Session with Paul
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Reality Check Section */}
       <section className="py-20 bg-slate-800/50">
@@ -308,7 +396,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-slate-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Scoutivate. All rights reserved.</p>
+            <p>&copy; 2024 Scoutiv8. All rights reserved.</p>
           </div>
         </div>
       </footer>
