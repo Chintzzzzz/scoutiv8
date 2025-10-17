@@ -7,7 +7,6 @@ import { VscFeedback } from "react-icons/vsc";
 import { IoAccessibilitySharp } from "react-icons/io5";
 import Image from "next/image";
 import AnimatedHeader from '@/components/AnimatedHeader';
-import KeyCard from "@/components/KeyCard";
 import HeroBackground from "@/components/HeroBackground";
 
 
@@ -101,7 +100,7 @@ export default function Home() {
       {/*<section className="py-20 bg-[radial-gradient(circle_at_center,_#0a0a0a,_#1a1a1a,_#daba0b40)]"> */}
         <div className="container mx-auto px-6">
           <AnimatedHeader delay={0} className='mb-5'>
-            Empowering Every Player's Journey
+            {"Empowering Every Player's Journey"}
           </AnimatedHeader>
           <p className="text-center text-gray-300 max-w-5xl mx-auto text-lg leading-relaxed mb-10">
             <span className="text-[#daba0b] font-bold text-2xl">Scoutiv8</span> is a pioneering business dedicated to providing professional scouting reports for grassroots footballers across Glasgow and nearby regions. With over 40 years of experience at SPL Academy and first-team levels, our fully qualified scouts deliver both live and video-based assessments, offering detailed insights across the four key pillars of development — <span className="text-white font-semibold">Technical, Tactical, Physical,</span> and <span className="text-white font-semibold">Psychological</span>. Partnering with experts in sports science, sprint coaching, conditioning, psychology, and tactical training, we create bespoke development plans tailored to every player’s unique goals.
@@ -148,7 +147,7 @@ export default function Home() {
                 </h3>
                 <p className="subtitle">From Observation to Action</p>
                 <p className="description">
-                  Experienced scouts assess players in their natural environment, producing detailed reports that inform each player's personalised IDP. Recommendations for specialist courses and coaching are then tailored to individual goals.
+                  {"Experienced scouts assess players in their natural environment, producing detailed reports that inform each player's personalised IDP. Recommendations for specialist courses and coaching are then tailored to individual goals."}
                 </p>
               </div>
             </FadeInSection>
@@ -388,16 +387,21 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-b from-[#bfa008] to-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 "></div>
 
                 {/* Image Container */}
-                <div className="relative w-full h-64 mb-6 rounded-lg overflow-hidden">
-                  <img
+                <div className="relative w-full h-64 mb-6 rounded-lg overflow-hidden group">
+                  <Image
                     src={member.img}
                     alt={member.name}
-                    className="w-full h-full object-cover rounded-lg transition-opacity duration-500 group-hover:opacity-0"
+                    fill
+                    className="object-cover rounded-lg transition-opacity duration-500 group-hover:opacity-0"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    priority
                   />
-                  <img
+                  <Image
                     src={member.imgHover}
                     alt={member.name}
-                    className="absolute inset-0 w-full h-full object-cover rounded-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    fill
+                    className="object-cover rounded-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
 

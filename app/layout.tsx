@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Arvo, Montserrat  } from "next/font/google";
+import {  Arvo, Montserrat  } from "next/font/google";
 import "./globals.css";
 
 const arvoSans = Arvo({

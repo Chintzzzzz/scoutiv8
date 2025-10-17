@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 
+
+const backgrounds = ["/fb1.jpg", "/fb2.jpg", "/fb3.jpg", "/fb4.jpg", "/fb5.jpg"];
+
 export default function HeroBackground() {
-  const backgrounds = ["/fb1.jpg", "/fb2.jpg", "/fb3.jpg", "/fb4.jpg", "/fb5.jpg"];
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
