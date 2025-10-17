@@ -30,7 +30,7 @@ export function FadeInSection({
       style={{
         transitionDelay: isVisible ? `${delay}ms` : "0ms", // Only apply delay on visible
       }}
-      className={`opacity-0 translate-y-5 transition-all duration-2000 ${
+      className={`opacity-0 translate-y-5 transition-all duration-700 ${
         isVisible ? "animate-fadeInUp opacity-100 translate-y-0" : ""
       }`}
     >

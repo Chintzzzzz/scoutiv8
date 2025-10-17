@@ -27,3 +27,140 @@ code,
 pre {
   font-family: var(--font-mono), monospace;
 }
+
+/* === Glassmorphism Card === */
+.card {
+  @apply relative bg-slate-700/40 backdrop-blur-md p-8 rounded-2xl border border-slate-600/50 text-gray-300 shadow-[0_10px_30px_rgba(0,0,0,0.3)];
+}
+
+/* Glass reflection layer */
+.card::before {
+  content: "";
+  @apply absolute inset-0 rounded-2xl bg-gradient-to-br from-white/6 to-transparent pointer-events-none;
+  z-index: 0;
+}
+
+/* Card heading */
+.card h3 {
+  @apply text-2xl font-bold text-white mb-2 flex items-center gap-2 relative z-10;
+}
+
+/* Subtitle & description */
+.card .subtitle {
+  @apply font-semibold text-white mb-4 relative z-10;
+}
+.card .description {
+  @apply text-gray-400 relative z-10;
+}
+
+/* Icon container with static glow */
+.icon-glow {
+  @apply w-14 h-14 flex items-center justify-center rounded-lg relative;
+}
+
+.icon-glow::before {
+  content: "";
+  @apply absolute inset-0 rounded-lg blur-xl;
+  background: radial-gradient(circle, rgba(218, 186, 11, 0.25) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.icon-glow svg {
+  @apply relative z-10 w-8 h-8 text-[#daba0bec];
+}
+
+.key-card {
+  @apply relative bg-slate-700/40 backdrop-blur-md p-8 rounded-2xl border border-slate-600/50 text-gray-300 
+         transition-all duration-500 transform hover:-translate-y-2 hover:scale-105
+         shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.45)];
+}
+
+/* Glass reflection layer */
+.key-card::before {
+  content: "";
+  @apply absolute inset-0 rounded-2xl;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
+  z-index: 0;
+}
+
+/* Glow edge layer (hidden until hover) */
+.key-card::after {
+  content: "";
+  @apply absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500;
+  background: radial-gradient(circle at top left, transparent 40%, rgba(218, 186, 11, 0.18) 100%);
+  z-index: 0;
+}
+
+.key-card:hover::after {
+  @apply opacity-100;
+}
+
+/* Keep main content above */
+.key-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.key-card h3 {
+  @apply text-2xl font-bold text-white mb-4;
+}
+
+.key-card p {
+  @apply mb-6;
+}
+
+.key-card ul {
+  @apply text-gray-400 space-y-2;
+}
+
+/* Icon box */
+.icon-box {
+  @apply w-16 h-16 rounded-lg flex items-center justify-center mb-6 shadow-[0_4px_15px_rgba(0,0,0,0.4)]
+         transition-transform duration-300;
+}
+
+.key-card:hover .icon-box {
+  @apply scale-110;
+}
+
+.icon-box svg {
+  @apply w-8 h-8 text-white;
+}
+
+/* === Color-specific glow effects === */
+.key-card:hover .icon-box.bg-blue-600 {
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+}
+.key-card:hover .icon-box.bg-green-600 {
+  box-shadow: 0 0 15px rgba(22, 163, 74, 0.5);
+}
+.key-card:hover .icon-box.bg-yellow-400 {
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.5);
+}
+.key-card:hover .icon-box.bg-orange-600 {
+  box-shadow: 0 0 15px rgba(234, 88, 12, 0.5);
+}
+
+/* === Card border glow === */
+.key-card:hover {
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.04),
+    0 0 30px rgba(255, 255, 255, 0.08),
+    0 0 40px rgba(255, 255, 255, 0.03);
+}
+
+/* Subtle icon-matched edge glow */
+.key-card:hover .bg-blue-600 ~ *::after {
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.3), transparent 70%);
+}
+.key-card:hover .bg-green-600 ~ *::after {
+  background: radial-gradient(circle at center, rgba(22, 163, 74, 0.3), transparent 70%);
+}
+.key-card:hover .bg-yellow-400 ~ *::after {
+  background: radial-gradient(circle at center, rgba(250, 204, 21, 0.3), transparent 70%);
+}
+.key-card:hover .bg-orange-600 ~ *::after {
+  background: radial-gradient(circle at center, rgba(234, 88, 12, 0.3), transparent 70%);
+}
+
+
