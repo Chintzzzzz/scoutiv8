@@ -8,6 +8,9 @@ import { IoAccessibilitySharp } from "react-icons/io5";
 import Image from "next/image";
 import AnimatedHeader from '@/components/AnimatedHeader';
 import HeroBackground from "@/components/HeroBackground";
+import MobileMenu from '@/components/MobileMenu';
+import { FaLinkedin, FaInstagram } from "react-icons/fa";
+import BackToTopButton from '@/components/BackToTopButton';
 
 
 
@@ -15,54 +18,56 @@ import HeroBackground from "@/components/HeroBackground";
 export default function Home() {
 
   return (
-    <div>
-      {/* Navigation */}
+    <div> 
+      {/* Navigation */} 
       <div
-        className="px-4 pt-0 sticky top-0 z-20 border-white/10 rounded-3xl shadow-lg max-w-5xl mx-auto"
-        style={{
-          backdropFilter: 'blur(34px)',
-          backgroundColor: 'rgba(0, 0, 0, 0.25)',
-        }}
+        className="
+          px-4 pt-0 sticky top-0 z-20 border-white/10 shadow-lg max-w-5xl mx-auto 
+          bg-black md:bg-[rgba(0,0,0,0.25)] 
+          md:backdrop-blur-[34px] md:rounded-3xl
+        "
       >
-        <nav className="container mx-auto px-5 py-1 border-white/10 shadow-lg rounded-3xl">
-          <div className="flex items-center justify-between">
-            {/* Clickable Logo */}
-            <Link href="/" className="flex items-center gap-3">
-              <Image
-                src="/s8_transparent.png"
-                alt="Scoutiv8 Logo"
-                width={100}
-                height={60}
-                className="rounded-md hover:scale-105 transition-transform duration-200 cursor-pointer"
-              />
-            </Link>
+        <nav className="flex items-center justify-between px-5 py-2 rounded-none md:rounded-3xl">
+          {/* LOGO */}
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/s8_transparent.png"
+              alt="Scoutiv8 Logo"
+              width={100}
+              height={60}
+              className="rounded-md hover:scale-105 transition-transform duration-200 cursor-pointer"
+            />
+          </Link>
 
-            {/* Navigation Links */}
-            <div className="hidden md:flex space-x-8">
-              {[
-                { name: 'Services', href: '#services' },
-                { name: 'About', href: '#about' },
-                { name: 'Our Team', href: '#team' },
-                { name: 'Pricing', href: '#pricing' },
-              ].map((item, i) => (
-                <a
-                  key={i}
-                  href={item.href}
-                  className="text-white px-3 py-2 rounded-md transition-all duration-300 
-                            hover:text-[#daba0bec] hover:scale-105 transform"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
+          {/* DESKTOP LINKS + BUTTON */}
+          <div className="hidden md:flex items-center justify-between w-full max-w-3xl mx-auto">
+            {[
+              { name: "Services", href: "#services" },
+              { name: "About", href: "#about" },
+              { name: "Our Team", href: "#team" },
+              { name: "Pricing", href: "#pricing" },
+            ].map((item, i) => (
+              <a
+                key={i}
+                href={item.href}
+                className="text-white px-4 py-2 rounded-md transition-all duration-300 hover:text-[#daba0bec] hover:scale-105 transform"
+              >
+                {item.name}
+              </a>
+            ))}
 
-            {/* Button */}
             <button className="bg-[#daba0bec] hover:bg-[#FFD700] text-black px-6 py-2 rounded-lg transition-colors font-semibold">
               Book Session
             </button>
           </div>
+
+          {/* MOBILE MENU ICON */}
+          <div className="md:hidden flex items-center">
+            <MobileMenu />
+          </div>
         </nav>
       </div>
+
 
 
 
@@ -72,7 +77,7 @@ export default function Home() {
       <HeroBackground />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/75 backdrop-blur-[3px]"></div>
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-[3px]"></div>
 
       {/* Content */}
       <div className="container mx-auto px-6 text-center relative z-10">
@@ -420,31 +425,7 @@ export default function Home() {
 
 
 
-      {/* Reality Check Section */}
-      <section className="py-20 bg-slate-800/50">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-white mb-8">
-            Get the Reality Check You Need
-          </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto">
-            Stop wondering where you stand. Our professional analysis gives you an honest, detailed assessment of your current level and exactly what you need to work on to improve.
-          </p>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-slate-700/30 backdrop-blur-sm p-6 rounded-xl border border-slate-600">
-              <h3 className="text-xl font-bold text-white mb-4">Track Your Progress</h3>
-              <p className="text-gray-300">
-                Get baseline measurements and regular reassessments to monitor your development over time.
-              </p>
-            </div>
-            <div className="bg-slate-700/30 backdrop-blur-sm p-6 rounded-xl border border-slate-600">
-              <h3 className="text-xl font-bold text-white mb-4">Honest Assessment</h3>
-              <p className="text-gray-300">
-                No sugar-coating. Get the truth about your abilities and realistic expectations for your football journey.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Pricing Section */}
       <section id="pricing" className="py-20">
@@ -504,66 +485,142 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Discover Your True Potential?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join hundreds of players who&apos;ve already received their professional scout reports and started their improvement journey.
-          </p>
-          <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
-            Start Your Assessment Today
-          </button>
+      <section className="py-24 bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a]">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+
+          {/* Card */}
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-12 shadow-[0_0_30px_rgba(0,0,0,0.4)]">
+
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to be the best <span className="text-[#daba0b]">YOU</span> can be?
+            </h2>
+
+            <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+              Join hundreds of players already transforming their game with
+              professional-level scouting reports and personalised performance insights.
+            </p>
+
+            <button className="
+              px-10 py-4 text-lg font-semibold rounded-xl
+              bg-[#daba0b] text-black
+              hover:bg-[#e6c636] transition-all
+              shadow-[0_0_20px_rgba(218,186,11,0.4)]
+              hover:shadow-[0_0_35px_rgba(218,186,11,0.7)]
+            ">
+              Get Your Report Today
+            </button>
+            
+          </div>
+
         </div>
       </section>
 
+
+
       {/* Footer */}
-      <footer className="bg-slate-900 py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-2xl font-bold text-white mb-4">
-                Scout<span className="text-blue-400">iv8</span>
+      <footer className="w-full bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#daba0b40] text-white px-6 py-20 md:pt-32">
+        <div className="max-w-7xl mx-auto">
+
+          {/* LEFT SIDE — Logo */}
+          <div className="flex flex-col md:flex-row md:items-start">
+
+            <div className="mb-12 md:mb-0 w-44 flex-shrink-0">
+              <img
+                src="/s8_transparent.png"
+                alt="Scoutivate Logo"
+                className="w-40 md:w-44"  
+              />
+            </div>
+
+            {/* RIGHT SIDE — 3 COLUMNS (DESKTOP) */}
+            <div className="hidden md:grid grid-cols-4 gap-16 md:ml-32">
+              
+              {/* SERVICES */}
+              <div>
+                <h3 className="text-sm font-semibold mb-4">Services</h3>
+                <ul className="space-y-3 text-sm text-gray-300">
+                  <li><a className="hover:text-white">FA 4 Corner Model Assesment</a></li>
+                  <li><a className="hover:text-white">Professional Evaluation</a></li>
+                  <li><a className="hover:text-white">1-to-1 Support</a></li>
+                </ul>
               </div>
-              <p className="text-gray-400">
-                Professional football analysis for everyday players.
-              </p>
+
+              {/* ABOUT */}
+              <div>
+                <h3 className="text-sm font-semibold mb-4">About</h3>
+                <ul className="space-y-3 text-sm text-gray-300">
+                  <li><a href="#about" className="hover:text-white">Who We Are</a></li>
+                  <li><a href="#services" className="hover:text-white">Our Approach</a></li>
+                  <li><a href="#" className="hover:text-white">Testimonials</a></li>
+                </ul>
+              </div>
+
+
+              {/* CONTACT */}
+              <div>
+                <h3 className="text-sm font-semibold mb-4">Contact</h3>
+                <ul className="space-y-3 text-sm text-gray-300">
+                  <li><a href="mailto:info@scoutivate.com" className="hover:text-white">Email Us</a></li>
+                  <li><a href="#contact-form" className="hover:text-white">Contact Form</a></li>
+                </ul>
+              </div>
+
             </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Services</h4>
-              <ul className="text-gray-400 space-y-2">
-                <li>Technical Analysis</li>
-                <li>Physical Assessment</li>
-                <li>Psychological Profile</li>
-                <li>Tactical Awareness</li>
-                <li>1-on-1 Coaching</li>
-              </ul>
+
+          </div>
+
+          {/* MOBILE — TWO COLUMNS */}
+          <div className="md:hidden grid grid-cols-2 gap-10 mt-12">
+
+            {/* COL 1 = SERVICES + ABOUT */}
+            <div className="space-y-10">
+              <div>
+                <h3 className="text-sm font-semibold mb-3">Services</h3>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li><a className="hover:text-white">FA 4 Corner Model Assesment</a></li>
+                  <li><a className="hover:text-white">Professional Evaluation</a></li>
+                  <li><a className="hover:text-white">1-to-1 Support</a></li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold mb-3">About</h3>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li><a href="#about" className="hover:text-white">Who We Are</a></li>
+                  <li><a href="#services" className="hover:text-white">Our Approach</a></li>
+                  <li><a href="#" className="hover:text-white">Testimonials</a></li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">About</h4>
-              <ul className="text-gray-400 space-y-2">
-                <li><Link href="/about" className="hover:text-blue-400 transition-colors">About Us</Link></li>
-                <li>Paul Cooper</li>
-                <li>Our Method</li>
-                <li>Success Stories</li>
-                <li>FAQ</li>
-              </ul>
+
+            {/* COL 2 = RESOURCES + CONTACT */}
+            <div className="space-y-10">
+              <div>
+                <h3 className="text-sm font-semibold mb-3">Contact</h3>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li><a href="mailto:info@scoutivate.com" className="hover:text-white">Email Us</a></li>
+                  <li><a href="#contact-form" className="hover:text-white">Contact Form</a></li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Contact</h4>
-              <ul className="text-gray-400 space-y-2">
-                <li>hello@scoutivate.com</li>
-                <li>+44 20 1234 5678</li>
-                <li>London, UK</li>
-              </ul>
+
+          </div>
+
+          {/* BOTTOM */}
+          <div className="mt-16 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between text-sm text-gray-400">
+            <p>© 2025 Scoutivate</p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" className="hover:text-white text-3xl text-white"><FaLinkedin /></a>
+              <a href="#" className="hover:text-white text-3xl text-white"><FaInstagram /></a>
             </div>
           </div>
-          <div className="border-t border-slate-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Scoutiv8. All rights reserved.</p>
-          </div>
+
         </div>
       </footer>
+
+    {/* Back To Top Button */}
+      <BackToTopButton />
+
     </div>
   );
 }
