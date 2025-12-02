@@ -11,9 +11,64 @@ import HeroBackground from "@/components/HeroBackground";
 import MobileMenu from '@/components/MobileMenu';
 import { FaLinkedin, FaInstagram } from "react-icons/fa";
 import BackToTopButton from '@/components/BackToTopButton';
+import { FaSnowflake } from "react-icons/fa";
 
+type CardProps = {
+  title: string;
+  originalPrice: string;
+  discountedPrice: string;
+  features: string[];
+};
 
+function Card({ title, originalPrice, discountedPrice, features }: CardProps) {
+  return (
+    <div className="relative">
+      {/* Winter Badge */}
+      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-blue-600 font-semibold px-4 py-1 rounded-full shadow-[0_0_12px_4px_rgba(255,255,255,0.6)] border border-white z-10">
+        Winter Offer
+      </div>
 
+      {/* Card */}
+      <div className="relative rounded-2xl p-12 flex flex-col h-full shadow-[0_0_30px_rgba(0,0,0,0.4)] border border-white/10 bg-white/5 backdrop-blur-md overflow-hidden 
+                      transition-all duration-300 
+                      hover:border-white hover:shadow-[0_0_20px_#ffffff80]">
+        
+        {/* Snowflakes */}
+        {[...Array(15)].map((_, i: number) => (
+          <FaSnowflake
+            key={i}
+            className="absolute text-white/80"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              fontSize: `${8 + Math.random() * 12}px`,
+              opacity: 0.7 + Math.random() * 0.3,
+            }}
+          />
+        ))}
+
+        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+
+        {/* Pricing */}
+        <div className="mb-6">
+          <p className="text-gray-400 line-through text-lg">{originalPrice}</p>
+          <p className="text-4xl font-bold text-yellow-300">{discountedPrice}</p>
+        </div>
+
+        {/* Features */}
+        <ul className="space-y-3 flex-grow text-gray-200">
+          {features.map((feature: string, idx: number) => (
+            <li key={idx}>• {feature}</li>
+          ))}
+        </ul>
+
+        <button className="mt-8 w-full py-3 rounded-lg bg-[#daba0b] text-black font-semibold hover:bg-[#c6a507] transition">
+          Get {title.split(" ")[0]} Package
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
 
@@ -426,66 +481,73 @@ export default function Home() {
 
 
       
-
       {/* Pricing Section */}
-      <section id="pricing" className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-white text-center mb-16">
-            Choose Your Assessment
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-slate-700/30 backdrop-blur-sm p-8 rounded-xl border border-slate-600">
-              <h3 className="text-2xl font-bold text-white mb-4">Basic Report</h3>
-              <div className="text-4xl font-bold text-blue-400 mb-6">£49</div>
-              <ul className="text-gray-300 space-y-3 mb-8">
-                <li>• Technical analysis</li>
-                <li>• Written report (8-10 pages)</li>
-                <li>• Improvement recommendations</li>
-                <li>• Video analysis highlights</li>
-              </ul>
-              <button className="w-full bg-slate-600 hover:bg-slate-500 text-white py-3 rounded-lg font-semibold transition-colors">
-                Get Basic Report
-              </button>
-            </div>
+    <section id="pricing" className="py-20 bg-black text-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-5xl font-bold text-center mb-4">
+          Our Scouting Packages
+        </h2>
+        <p className="text-center text-gray-300 mb-20">
+          Choose the right development pathway with our expert-led scouting services.
+        </p>
 
-            <div className="bg-blue-600/20 backdrop-blur-sm p-8 rounded-xl border-2 border-blue-400 relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                Most Popular
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Complete Analysis</h3>
-              <div className="text-4xl font-bold text-blue-400 mb-6">£129</div>
-              <ul className="text-gray-300 space-y-3 mb-8">
-                <li>• Technical + Physical + Psychological + Tactical</li>
-                <li>• Comprehensive report (15-20 pages)</li>
-                <li>• Detailed improvement plan</li>
-                <li>• Video analysis with commentary</li>
-                <li>• Progress tracking tools</li>
-              </ul>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors">
-                Get Complete Analysis
-              </button>
-            </div>
+        {/* Cards Wrapper */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-            <div className="bg-slate-700/30 backdrop-blur-sm p-8 rounded-xl border border-slate-600">
-              <h3 className="text-2xl font-bold text-white mb-4">Elite Package</h3>
-              <div className="text-4xl font-bold text-blue-400 mb-6">£299</div>
-              <ul className="text-gray-300 space-y-3 mb-8">
-                <li>• Complete analysis</li>
-                <li>• 60-min 1-on-1 with Paul</li>
-                <li>• Personalized training program</li>
-                <li>• 3-month follow-up assessment</li>
-                <li>• Career pathway consultation</li>
-              </ul>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors">
-                Get Elite Package
-              </button>
-            </div>
-          </div>
+          {/* PREMIUM (12+) */}
+          <Card
+            title="Premium Scouting Package (12+)"
+            originalPrice="£150"
+            discountedPrice="£125"
+            features={[
+              "Video consultation to discuss aims and objectives",
+              "Qualified scout attendance OR video match analysis",
+              "PlayerData GPS tracker + vest provided",
+              "Scouting Assessment Report (within 7 days)",
+              "PlayerData Physical + Tactical report",
+              "Sports Science report",
+              "Individual Development Plan",
+              "Post-report video consultation on next steps",
+            ]}
+          />
+
+          {/* PREMIER (8–11) */}
+          <Card
+            title="Premier Scouting Package (8–11)"
+            originalPrice="£120"
+            discountedPrice="£100"
+            features={[
+              "Video consultation to discuss aims and objectives",
+              "Qualified scout attendance at your game",
+              "PlayerData GPS tracker provided",
+              "Scouting Assessment Report (within 7 days)",
+              "Additional PlayerData report",
+              "Individual Development Plan",
+              "Post-report video consultation",
+            ]}
+          />
+
+          {/* ACADEMY (8–11) */}
+          <Card
+            title="Academy Scouting Package (8–11)"
+            originalPrice="£90"
+            discountedPrice="£75"
+            features={[
+              "Video consultation to discuss aims and objectives",
+              "Qualified scout attendance at your game",
+              "Scouting Assessment Report (within 7 days)",
+              "Individual Development Plan",
+              "Post-report video consultation",
+            ]}
+          />
+
         </div>
-      </section>
+      </div>
+    </section>
+
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a]">
+      <section className="py-24 bg-black">
         <div className="max-w-4xl mx-auto px-6 text-center">
 
           {/* Card */}
