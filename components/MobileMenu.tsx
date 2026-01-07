@@ -15,6 +15,7 @@ export default function MobileMenu() {
     { name: "About", href: "#about" },
     { name: "Our Team", href: "#team" },
     { name: "Pricing", href: "#pricing" },
+    { name: "Reviews", href: "#reviews" },
   ];
 
   useEffect(() => {

@@ -101,6 +101,7 @@ export default function Home() {
               { name: "About", href: "#about" },
               { name: "Our Team", href: "#team" },
               { name: "Pricing", href: "#pricing" },
+              { name: "Reviews", href: "#reviews" },
             ].map((item, i) => (
               <a
                 key={i}
@@ -482,7 +483,7 @@ export default function Home() {
 
       
       {/* Pricing Section */}
-    <section id="pricing" className="py-20 bg-black text-white">
+    <section id="pricing" className="py-20 bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] text-white">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-5xl font-bold text-center mb-4">
           Our Scouting Packages
@@ -545,9 +546,144 @@ export default function Home() {
       </div>
     </section>
 
+      {/* Reviews */}     
+      <section id="reviews" className="py-24 bg-black text-white" >
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+    
+    {/* LEFT TEXT */}
+    <div>
+      <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+        Trusted by players. <br /> Proven by results.
+      </h2>
+
+      <p className="text-gray-300 mb-8 max-w-md">
+        Our scouting insights, data-driven analysis and development planning
+        have helped young athletes elevate their game and unlock new pathways.
+      </p>
+
+      <button className="flex items-center gap-2 text-[#daba0b] font-semibold hover:opacity-80 transition">
+        View More Reviews <span>→</span>
+      </button>
+    </div>
+
+    {/* RIGHT SIDE */}
+    {/* DESKTOP STATIC STACK */}
+<div className="hidden md:grid grid-cols-1 gap-10 auto-rows-fr">
+  {/* CARD 1 */}
+  <div className="relative p-6 rounded-xl bg-black border-4 border-white
+      transition-transform duration-300 hover:-translate-y-2 
+      hover:shadow-[0_0_25px_6px_rgba(218,186,11,0.45)]
+      flex flex-col justify-between"
+      style={{ boxShadow: "6px 6px 0px #daba0b" }}
+  >
+    <p className="text-lg mb-4 flex-grow">
+      “The scouting report was extremely detailed. The insights helped my son 
+      understand exactly what he needed to improve. Highly recommended.”
+    </p>
+    <p className="font-bold tracking-wide text-[#daba0b]">
+      — Parent of U12 Player
+    </p>
+  </div>
+
+  {/* CARD 2 */}
+  <div className="relative p-6 rounded-xl bg-black border-4 border-white
+      transition-transform duration-300 hover:-translate-y-2 
+      hover:shadow-[0_0_25px_6px_rgba(218,186,11,0.45)]
+      flex flex-col justify-between md:translate-x-16"
+      style={{ boxShadow: "6px 6px 0px #daba0b" }}
+  >
+    <p className="text-lg mb-4 flex-grow">
+      “The PlayerData breakdown and tactical insights were top-tier.
+      This is exactly the type of analysis academies look for.”
+    </p>
+    <p className="font-bold tracking-wide text-[#daba0b]">
+      — Academy Coach
+    </p>
+  </div>
+
+  {/* CARD 3 */}
+  <div className="relative p-6 rounded-xl bg-black border-4 border-white
+      transition-transform duration-300 hover:-translate-y-2 
+      hover:shadow-[0_0_25px_6px_rgba(218,186,11,0.45)]
+      flex flex-col justify-between"
+      style={{ boxShadow: "6px 6px 0px #daba0b" }}
+  >
+    <p className="text-lg mb-4 flex-grow">
+      “The development plan helped me structure my training properly.
+      I noticed improvements in only a few weeks.”
+    </p>
+    <p className="font-bold tracking-wide text-[#daba0b]">
+      — U15 Player
+    </p>
+  </div>
+</div>
+
+
+{/* MOBILE CAROUSEL */}
+<div className="md:hidden flex gap-6 overflow-x-auto snap-x snap-mandatory 
+    pb-6 mt-6 no-scrollbar animate-[slide_25s_linear_infinite]">
+
+  {/* CARD 1 */}
+  <div
+    className="snap-center min-w-[85%] bg-black border border-[#daba0b40] p-6 rounded-xl
+      shadow-[0_0_18px_rgba(218,186,11,0.25)]
+      transition-transform duration-300 hover:-translate-y-2 
+      hover:shadow-[0_0_25px_6px_rgba(218,186,11,0.45)]
+      flex flex-col justify-between h-full"
+    style={{ boxShadow: "6px 6px 0px #daba0b" }}
+  >
+    <p className="text-gray-200 mb-4 text-base flex-grow">
+      “The scouting report was extremely detailed. The insights helped my son 
+      understand exactly what he needed to improve. Highly recommended.”
+    </p>
+    <p className="font-bold tracking-wide text-[#daba0b] text-sm">
+      — Parent of U12 Player
+    </p>
+  </div>
+
+  {/* CARD 2 */}
+  <div
+    className="snap-center min-w-[85%] bg-black border border-[#daba0b40] p-6 rounded-xl
+      shadow-[0_0_18px_rgba(218,186,11,0.25)]
+      transition-transform duration-300 hover:-translate-y-2 
+      hover:shadow-[0_0_25px_6px_rgba(218,186,11,0.45)]
+      flex flex-col justify-between h-full"
+    style={{ boxShadow: "6px 6px 0px #daba0b" }}
+  >
+    <p className="text-gray-200 mb-4 text-base flex-grow">
+      “The PlayerData breakdown and tactical insights were top-tier.
+      This is exactly the type of analysis academies look for.”
+    </p>
+    <p className="font-bold tracking-wide text-[#daba0b] text-sm">
+      — Academy Coach
+    </p>
+  </div>
+
+  {/* CARD 3 */}
+  <div
+    className="snap-center min-w-[85%] bg-black border border-[#daba0b40] p-6 rounded-xl
+      shadow-[0_0_18px_rgba(218,186,11,0.25)]
+      transition-transform duration-300 hover:-translate-y-2 
+      hover:shadow-[0_0_25px_6px_rgba(218,186,11,0.45)]
+      flex flex-col justify-between h-full"
+    style={{ boxShadow: "6px 6px 0px #daba0b" }}
+  >
+    <p className="text-gray-200 mb-4 text-base flex-grow">
+      “The development plan helped me structure my training properly.
+      I noticed improvements in only a few weeks.”
+    </p>
+    <p className="font-bold tracking-wide text-[#daba0b] text-sm">
+      — U15 Player
+    </p>
+  </div>
+
+</div>
+</div>
+</section>
+
 
       {/* CTA Section */}
-      <section className="py-24 bg-black">
+      <section className="py-24 bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a]">
         <div className="max-w-4xl mx-auto px-6 text-center">
 
           {/* Card */}
@@ -575,9 +711,7 @@ export default function Home() {
           </div>
 
         </div>
-      </section>
-
-
+      </section> 
 
       {/* Footer */}
       <footer className="w-full bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#daba0b40] text-white px-6 py-20 md:pt-32">
