@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoFootball } from "react-icons/io5";
+import FinanceModal from "@/components/FinanceModal";
+
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -83,9 +85,14 @@ export default function MobileMenu() {
     </a>
   ))}
 
-  <button className="w-full bg-[#daba0b] hover:bg-[#bfa008] text-black font-semibold py-2 rounded-lg mt-4">
-    Book Session
-  </button>
+  <FinanceModal
+                email="your@email.com"
+                trigger={
+                  <button className="bg-[#daba0b] text-black px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">
+                    Book Session
+                  </button>
+                }
+              />
 </motion.div>
 
         )}

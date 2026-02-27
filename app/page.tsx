@@ -12,6 +12,8 @@ import MobileMenu from '@/components/MobileMenu';
 import { FaLinkedin, FaInstagram } from "react-icons/fa";
 import BackToTopButton from '@/components/BackToTopButton';
 import { FaSnowflake } from "react-icons/fa";
+import FinanceModal from "@/components/FinanceModal";
+import FaqSection from "@/components/FaqSection";
 
 type CardProps = {
   title: string;
@@ -62,9 +64,14 @@ function Card({ title, originalPrice, discountedPrice, features }: CardProps) {
           ))}
         </ul>
 
+        <FinanceModal
+        email="ncu75afc@hotmail.com"
+        trigger={  
         <button className="mt-8 w-full py-3 rounded-lg bg-[#daba0b] text-black font-semibold hover:bg-[#c6a507] transition">
           Get {title.split(" ")[0]} Package
         </button>
+        }
+        />
       </div>
     </div>
   );
@@ -112,9 +119,14 @@ export default function Home() {
               </a>
             ))}
 
-            <button className="bg-[#daba0bec] hover:bg-[#FFD700] text-black px-6 py-2 rounded-lg transition-colors font-semibold">
-              Book Session
-            </button>
+            <FinanceModal
+              email="ncu75afc@hotmail.com"
+              trigger={
+                <button className="bg-[#daba0b] text-black px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">
+                  Book Session
+                </button>
+              }
+            />
           </div>
 
           {/* MOBILE MENU ICON */}
@@ -145,11 +157,15 @@ export default function Home() {
           Be the Best <span className="text-[#daba0b] font-bold">YOU</span> can be.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button
-            className="bg-[#daba0bec] text-black border-2 border-yellow-400 px-8 py-4 rounded-lg text-lg font-semibold 
-             transition-all duration-300 transform hover:scale-105">
-            Get Your Report Now
-          </button>
+          <FinanceModal
+              email="ncu75afc@hotmail.com"
+              trigger={
+                <button className="bg-[#daba0b] text-black px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                  Get Your Report Now
+                </button>
+              }
+          />
+
         </div>
       </div>
       </section>
@@ -681,6 +697,8 @@ export default function Home() {
 </div>
 </section>
 
+{/* FAQs Section */}
+<FaqSection />
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a]">
@@ -697,16 +715,24 @@ export default function Home() {
               Join hundreds of players already transforming their game with
               professional-level scouting reports and personalised performance insights.
             </p>
-
-            <button className="
-              px-10 py-4 text-lg font-semibold rounded-xl
-              bg-[#daba0b] text-black
-              hover:bg-[#e6c636] transition-all
-              shadow-[0_0_20px_rgba(218,186,11,0.4)]
-              hover:shadow-[0_0_35px_rgba(218,186,11,0.7)]
-            ">
-              Get Your Report Today
-            </button>
+            
+            
+            <FinanceModal
+              email="ncu75afc@hotmail.com"
+              trigger={
+                <button
+                  className="
+                    px-10 py-4 text-lg font-semibold rounded-xl
+                    bg-[#daba0b] text-black
+                    hover:bg-[#e6c636] transition-all
+                    shadow-[0_0_20px_rgba(218,186,11,0.4)]
+                    hover:shadow-[0_0_35px_rgba(218,186,11,0.7)]
+                  "
+                >
+                  Get Your Report Today
+                </button>
+              }
+            />
             
           </div>
 
