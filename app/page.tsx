@@ -14,6 +14,13 @@ import BackToTopButton from '@/components/BackToTopButton';
 import { FaSnowflake } from "react-icons/fa";
 import FinanceModal from "@/components/FinanceModal";
 import FaqSection from "@/components/FaqSection";
+import { Afacad } from "next/font/google";
+
+const afacad = Afacad({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
 
 type CardProps = {
   title: string;
@@ -58,7 +65,7 @@ function Card({ title, originalPrice, discountedPrice, features }: CardProps) {
         </div>
 
         {/* Features */}
-        <ul className="space-y-3 flex-grow text-gray-200">
+        <ul className="space-y-3 grow text-gray-200">
           {features.map((feature: string, idx: number) => (
             <li key={idx}>• {feature}</li>
           ))}
@@ -149,9 +156,11 @@ export default function Home() {
 
       {/* Content */}
       <div className="container mx-auto px-6 text-center relative z-10">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-b from-white to-gray-600 bg-clip-text text-transparent inline-block">
+        <h1
+          className={`${afacad.className} tracking-wide text-5xl md:text-7xl font-bold mb-6 text-white bg-clip-text inline-block`}
+        >
           Get Your Professional
-          <span className="text-[#daba0bec] block">Scout Report</span>
+          <span className="text-[#daba0bec] block tracking-wide">Scout Report</span>
         </h1>
         <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
           Be the Best <span className="text-[#daba0b] font-bold">YOU</span> can be.
@@ -173,7 +182,7 @@ export default function Home() {
 
 
       {/* Cards Section */}
-      <section id='about' className="py-20 bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#daba0b40]">
+      <section id='about' className="py-20 bg-linear-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#daba0b40]">
       {/*<section className="py-20 bg-[radial-gradient(circle_at_center,_#0a0a0a,_#1a1a1a,_#daba0b40)]"> */}
         <div className="container mx-auto px-6">
           <AnimatedHeader delay={0} className='mb-5'>
@@ -278,7 +287,7 @@ export default function Home() {
       </section>
 
         {/* Services Section */}
-        <section id="services" className="py-20 bg-gradient-to-b from-[#daba0b40] via-[#1a1a1a] to-[#0a0a0a]">
+        <section id="services" className="py-20 bg-linear-to-b from-[#daba0b40] via-[#1a1a1a] to-[#0a0a0a]">
           <div className="container mx-auto px-6">
           <AnimatedHeader delay={0} className="mb-14 pt-20">
             Professional Analysis in Four Key Areas
@@ -461,7 +470,7 @@ export default function Home() {
                 className="group relative rounded-xl p-6 text-left bg-slate-800/30 overflow-hidden transition-all duration-500"
               >
                 {/* Gradient Overlay on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#bfa008] to-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 "></div>
+                <div className="absolute inset-0 bg-linear-to-b from-[#bfa008] to-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 "></div>
 
                 {/* Image Container */}
                 <div className="relative w-full h-64 mb-6 rounded-lg overflow-hidden group">
@@ -499,7 +508,7 @@ export default function Home() {
 
       
       {/* Pricing Section */}
-    <section id="pricing" className="py-20 bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] text-white">
+    <section id="pricing" className="py-20 bg-linear-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] text-white">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-5xl font-bold text-center mb-4">
           Our Scouting Packages
@@ -577,9 +586,12 @@ export default function Home() {
         have helped young athletes elevate their game and unlock new pathways.
       </p>
 
-      <button className="flex items-center gap-2 text-[#daba0b] font-semibold hover:opacity-80 transition">
-        View More Reviews <span>→</span>
-      </button>
+      <Link
+        href="/reviews"
+        className="flex items-center gap-2 text-[#daba0b] font-semibold hover:opacity-80 transition"
+      >
+        View More Reviews →
+      </Link>
     </div>
 
     {/* RIGHT SIDE */}
@@ -592,12 +604,13 @@ export default function Home() {
       flex flex-col justify-between"
       style={{ boxShadow: "6px 6px 0px #daba0b" }}
   >
-    <p className="text-lg mb-4 flex-grow">
-      “The scouting report was extremely detailed. The insights helped my son 
-      understand exactly what he needed to improve. Highly recommended.”
+    <p className="text-lg mb-4 grow">
+      
+"The report was very detailed with areas he does well and areas for him to focus his development on. We also received a PlayerData GPS tracker report and Sports Science analysis report with things like distance covered, his top speed and heat maps.
+Scoutiv8 has been brilliant in helping us know what my son needs to assist his football development and putting a training plan together for him."
     </p>
     <p className="font-bold tracking-wide text-[#daba0b]">
-      — Parent of U12 Player
+      — Parent of Luke(Under 13 player)
     </p>
   </div>
 
@@ -608,12 +621,11 @@ export default function Home() {
       flex flex-col justify-between md:translate-x-16"
       style={{ boxShadow: "6px 6px 0px #daba0b" }}
   >
-    <p className="text-lg mb-4 flex-grow">
-      “The PlayerData breakdown and tactical insights were top-tier.
-      This is exactly the type of analysis academies look for.”
+    <p className="text-lg mb-4 grow">
+      "I was recommended Scoutiv8 by a friend and my boy absolutely loves it, Paul himself is very honest and easy to talk to and Sam just loves working with and being coached by professional players and big Sean the spirit coach, it's all very professional and improvement can be noticed already."
     </p>
     <p className="font-bold tracking-wide text-[#daba0b]">
-      — Academy Coach
+      — Scott(Sam's Parent)
     </p>
   </div>
 
@@ -624,12 +636,12 @@ export default function Home() {
       flex flex-col justify-between"
       style={{ boxShadow: "6px 6px 0px #daba0b" }}
   >
-    <p className="text-lg mb-4 flex-grow">
-      “The development plan helped me structure my training properly.
-      I noticed improvements in only a few weeks.”
+    <p className="text-lg mb-4 grow">
+      "The professsionalism of the assessments and level of detail in the reports  we've not seen anywhere else. Paul has put together a development plan providing access to specialist sprint coaching (with Sparta Sprint Academy), and technical development  through 1-2-1 sessions with The Finishing Touch. 
+       Scoutiv8 have been really good to work with and the advice and guidance Paul and the Team can provide is second to none."     
     </p>
     <p className="font-bold tracking-wide text-[#daba0b]">
-      — U15 Player
+      — Parent of Harris(Under 13 player)
     </p>
   </div>
 </div>
@@ -648,12 +660,12 @@ export default function Home() {
       flex flex-col justify-between h-full"
     style={{ boxShadow: "6px 6px 0px #daba0b" }}
   >
-    <p className="text-gray-200 mb-4 text-base flex-grow">
-      “The scouting report was extremely detailed. The insights helped my son 
-      understand exactly what he needed to improve. Highly recommended.”
+    <p className="text-gray-200 mb-4 text-base grow">
+      "The report was very detailed with areas he does well and areas for him to focus his development on. We also received a PlayerData GPS tracker report and Sports Science analysis report with things like distance covered, his top speed and heat maps.
+Scoutiv8 has been brilliant in helping us know what my son needs to assist his football development and putting a training plan together for him."
     </p>
     <p className="font-bold tracking-wide text-[#daba0b] text-sm">
-      — Parent of U12 Player
+      — Parent of Luke(Under 13 player)
     </p>
   </div>
 
@@ -666,12 +678,12 @@ export default function Home() {
       flex flex-col justify-between h-full"
     style={{ boxShadow: "6px 6px 0px #daba0b" }}
   >
-    <p className="text-gray-200 mb-4 text-base flex-grow">
-      “The PlayerData breakdown and tactical insights were top-tier.
-      This is exactly the type of analysis academies look for.”
+    <p className="text-gray-200 mb-4 text-base grow">
+    "I was recommended Scoutiv8 by a friend and my boy absolutely loves it, Paul himself is very honest and easy to talk to and Sam just loves working with and being coached by professional players and big Sean the spirit coach, it's all very professional and improvement can be noticed already."
+
     </p>
     <p className="font-bold tracking-wide text-[#daba0b] text-sm">
-      — Academy Coach
+      — Scott(Sam's Parent)
     </p>
   </div>
 
@@ -684,12 +696,12 @@ export default function Home() {
       flex flex-col justify-between h-full"
     style={{ boxShadow: "6px 6px 0px #daba0b" }}
   >
-    <p className="text-gray-200 mb-4 text-base flex-grow">
-      “The development plan helped me structure my training properly.
-      I noticed improvements in only a few weeks.”
+    <p className="text-gray-200 mb-4 text-base grow">
+      "The professsionalism of the assessments and level of detail in the reports  we've not seen anywhere else. Paul has put together a development plan providing access to specialist sprint coaching (with Sparta Sprint Academy), and technical development  through 1-2-1 sessions with The Finishing Touch. 
+       Scoutiv8 have been really good to work with and the advice and guidance Paul and the Team can provide is second to none."
     </p>
     <p className="font-bold tracking-wide text-[#daba0b] text-sm">
-      — U15 Player
+      — Parent of Harris(Under 13 player)
     </p>
   </div>
 
@@ -701,13 +713,15 @@ export default function Home() {
 <FaqSection />
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a]">
+      <section className="py-24 bg-linear-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a]">
         <div className="max-w-4xl mx-auto px-6 text-center">
 
           {/* Card */}
           <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-12 shadow-[0_0_30px_rgba(0,0,0,0.4)]">
 
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2
+              className={`${afacad.className}  text-4xl md:text-5xl font-bold text-white mb-6`}
+            >
               Ready to be the best <span className="text-[#daba0b]">YOU</span> can be?
             </h2>
 
@@ -740,13 +754,13 @@ export default function Home() {
       </section> 
 
       {/* Footer */}
-      <footer className="w-full bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#daba0b40] text-white px-6 py-20 md:pt-32">
+      <footer className="w-full bg-linear-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#daba0b40] text-white px-6 py-20 md:pt-32">
         <div className="max-w-7xl mx-auto">
 
           {/* LEFT SIDE — Logo */}
           <div className="flex flex-col md:flex-row md:items-start">
 
-            <div className="mb-12 md:mb-0 w-44 flex-shrink-0">
+            <div className="mb-12 md:mb-0 w-44 shrink-0">
               <img
                 src="/s8_transparent.png"
                 alt="Scoutivate Logo"

@@ -69,7 +69,7 @@ export default function FaqSection() {
     <section className="bg-black text-white py-24">
       <div className="max-w-5xl mx-auto px-6">
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold">FAQs</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center">FAQs</h2>
         </div>
 
         <div className="border-t border-white/10">
