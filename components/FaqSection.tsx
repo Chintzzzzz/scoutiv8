@@ -2,6 +2,12 @@
 
 import { useState } from "react";
 import { Plus } from "lucide-react";
+import { Afacad } from "next/font/google";
+
+const afacad = Afacad({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
 
 const faqs = [
   {
@@ -66,10 +72,10 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="bg-black text-white py-24">
+    <section id="faqs" className="bg-black text-white py-24">
       <div className="max-w-5xl mx-auto px-6">
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-center">FAQs</h2>
+          <h2 className={`${afacad.className} text-4xl md:text-5xl font-bold text-center`}>FAQs</h2>
         </div>
 
         <div className="border-t border-white/10">

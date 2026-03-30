@@ -36,7 +36,7 @@ pre {
 /* Glass reflection layer */
 .card::before {
   content: "";
-  @apply absolute inset-0 rounded-2xl bg-gradient-to-br from-white/6 to-transparent pointer-events-none;
+  @apply absolute inset-0 rounded-2xl bg-linear-to-br from-white/6 to-transparent pointer-events-none;
   z-index: 0;
 }
 
@@ -164,3 +164,27 @@ pre {
 }
 
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

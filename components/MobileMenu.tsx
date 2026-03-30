@@ -15,9 +15,11 @@ export default function MobileMenu() {
   const links = [
     { name: "Services", href: "#services" },
     { name: "About", href: "#about" },
-    { name: "Our Team", href: "#team" },
+    { name: "Our Story", href: "#story" },
+    { name: "Partners", href: "#partners" },
     { name: "Pricing", href: "#pricing" },
     { name: "Reviews", href: "#reviews" },
+    { name: "FAQs", href: "#faqs" },
   ];
 
   useEffect(() => {
@@ -71,7 +73,7 @@ export default function MobileMenu() {
   flex flex-col items-center justify-start
   px-6 pt-6 pb-6
   z-500
-  bg-black/100 border border-white/10
+  bg-black border border-white/10
   "
 >
   {links.map((item, idx) => (

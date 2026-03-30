@@ -21,6 +21,38 @@ const afacad = Afacad({
   weight: ["400", "600", "700"],
 });
 
+const partners = [
+  {
+    name: "PlayerData",
+    logo: "/logos/playerdata.jpeg",
+    link: "https://playerdata.com/en-gb",
+  },
+  {
+    name: "ProScore Academy",
+    logo: "/logos/psa.jpeg",
+    link: "https://proscoreacademy.co.uk/",
+  },
+  {
+    name: "TheSoccerLab",
+    logo: "/logos/soccerlab.jpeg",
+    link: "https://www.instagram.com/thesoccerlabglasgow/",
+  },
+  {
+    name: "Sparta Speed Academy",
+    logo: "/logos/sparta.jpeg",
+    link: "https://www.instagram.com/sparta_speed_academy?igsh=MWp5dGx4MWVqNWM3ag==",
+  },
+  {
+    name: "The Finishing Touch",
+    logo: "/logos/tft.jpeg",
+    link: "https://www.instagram.com/thefinishingtouchcoaching?igsh=NmUxYmNtNDhhZGt4",
+  },
+  {
+    name: "Kevin O'Connor",
+    logo: "/logos/kev.jpeg",
+    link: "https://www.instagram.com/elationkev?igsh=OTA2ZGN4aTBoOTky",
+  },
+];
 
 type CardProps = {
   title: string;
@@ -32,30 +64,14 @@ type CardProps = {
 function Card({ title, originalPrice, discountedPrice, features }: CardProps) {
   return (
     <div className="relative">
-      {/* Winter Badge */}
-      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-blue-600 font-semibold px-4 py-1 rounded-full shadow-[0_0_12px_4px_rgba(255,255,255,0.6)] border border-white z-10">
-        Winter Offer
-      </div>
+      
 
       {/* Card */}
       <div className="relative rounded-2xl p-12 flex flex-col h-full shadow-[0_0_30px_rgba(0,0,0,0.4)] border border-white/10 bg-white/5 backdrop-blur-md overflow-hidden 
                       transition-all duration-300 
-                      hover:border-white hover:shadow-[0_0_20px_#ffffff80]">
+                      hover:border-[#daba0b] hover:shadow-[0_0_20px_#ffffff80]">
         
-        {/* Snowflakes */}
-        {[...Array(15)].map((_, i: number) => (
-          <FaSnowflake
-            key={i}
-            className="absolute text-white/80"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              fontSize: `${8 + Math.random() * 12}px`,
-              opacity: 0.7 + Math.random() * 0.3,
-            }}
-          />
-        ))}
-
+        
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
 
         {/* Pricing */}
@@ -98,7 +114,7 @@ export default function Home() {
       >
         <nav className="flex items-center justify-between px-5 py-2 rounded-none md:rounded-3xl">
           {/* LOGO */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-4">
             <Image
               src="/s8_transparent.png"
               alt="Scoutiv8 Logo"
@@ -109,13 +125,15 @@ export default function Home() {
           </Link>
 
           {/* DESKTOP LINKS + BUTTON */}
-          <div className="hidden md:flex items-center justify-between w-full max-w-3xl mx-auto">
+          <div className="hidden md:flex items-center justify-between w-full max-w-4xl mx-auto">
             {[
               { name: "Services", href: "#services" },
               { name: "About", href: "#about" },
-              { name: "Our Team", href: "#team" },
+              { name: "Our Story", href: "#story" },
+              { name: "Partners", href: "#partners" },
               { name: "Pricing", href: "#pricing" },
               { name: "Reviews", href: "#reviews" },
+              { name: "FAQs", href: "#faqs" },
             ].map((item, i) => (
               <a
                 key={i}
@@ -185,7 +203,7 @@ export default function Home() {
       <section id='about' className="py-20 bg-linear-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#daba0b40]">
       {/*<section className="py-20 bg-[radial-gradient(circle_at_center,_#0a0a0a,_#1a1a1a,_#daba0b40)]"> */}
         <div className="container mx-auto px-6">
-          <AnimatedHeader delay={0} className='mb-5'>
+          <AnimatedHeader delay={0} className={`${afacad.className} mb-5`}>
             {"Empowering Every Player's Journey"}
           </AnimatedHeader>
           <p className="text-center text-gray-300 max-w-5xl mx-auto text-lg leading-relaxed mb-10">
@@ -289,7 +307,7 @@ export default function Home() {
         {/* Services Section */}
         <section id="services" className="py-20 bg-linear-to-b from-[#daba0b40] via-[#1a1a1a] to-[#0a0a0a]">
           <div className="container mx-auto px-6">
-          <AnimatedHeader delay={0} className="mb-14 pt-20">
+          <AnimatedHeader delay={0} className={`${afacad.className} mb-14 pt-20`}>
             Professional Analysis in Four Key Areas
           </AnimatedHeader>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -383,126 +401,145 @@ export default function Home() {
         </div>
       </section>
 
-      {/* === OUR TEAM SECTION === */}
+      {/* === OUR STORY (FOUNDER) === */}
+<section id="story" className=" py-24 bg-linear-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a]">
+  
+  {/* Header */}
+  <AnimatedHeader className={`${afacad.className} mb-8`}>
+    Our Story...
+  </AnimatedHeader>
+
+  <div className="container mx-auto px-6">
+    
+    {/* Outer Box */}
+    <div className="relative max-w-5xl mx-auto bg-linear-to-br from-[#111111] via-[#151515] to-[#0a0a0a] border border-white/10 rounded-2xl p-8 md:p-12 overflow-hidden">
       
-      <section id="team" className="py-20 bg-black text-center">
-        <div className="container mx-auto px-6">
-          {/* Section Header */}
-          <AnimatedHeader>
-            Meet <span className="text-[#daba0b]">Our Team</span>
-          </AnimatedHeader>
-          <p className="text-gray-300 max-w-3xl mx-auto mb-16 text-lg">
-            At the heart of our mission is a dedicated team of experienced scouts, coaches, and performance specialists 
-            who share a passion for developing players to their fullest potential. Every member of our team is committed 
-            to empowering players on and off the pitch through expertise, mentorship, and care.
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        
+        {/* Image */}
+        <div className="relative flex justify-center ">
+          <a
+            href="https://linkedin.com/in/PAUL_LINKEDIN"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative block w-[80%] md:w-[90%] lg:w-[85%] group"
+          >
+            <Image
+              src="/Images/founder.jpeg"
+              alt="Founder"
+              width={500}
+              height={500}
+              className="rounded-xl object-cover w-full transition duration-500 group-hover:scale-[1.03]"
+            />
+
+            {/* Overlays */}
+            <div className="absolute inset-0 rounded-xl bg-black/40"></div>
+            <div className="absolute inset-0 rounded-xl bg-[#daba0b]/10 mix-blend-overlay"></div>
+
+            {/* Hover CTA */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+              <span className="text-white text-sm font-medium bg-black/60 px-4 py-2 rounded-full border border-white/10 backdrop-blur-sm">
+                View LinkedIn ↗
+              </span>
+            </div>
+          </a>
+        </div>
+
+        {/* Content */}
+        <div>
+          <p className="text-white/70 leading-[1.7] md:leading-[1.9] text-[15px] md:text-[16px] lg:text-[14px] max-w-150">
+            I have spent over 40 years in football, playing at both professional and semi-professional levels, with experience spanning grassroots coaching and multiple roles at Partick Thistle FC, including Academy Coach, Pre-Academy Manager, Parent Liaison Officer, and Senior Academy Scout. In April 2023, I was appointed Head of Academy Recruitment at St Mirren FC, and Scoutiv8 was developed from years of experience and a clear vision to better support young players, particularly at grassroots level, in becoming the best version of themselves. I founded Scoutiv8 in late 2025 as a means of using my experience and network to support, mentor, and educate young players and their parents through a holistic approach, combining scouting reports, data-driven physical and tactical analysis, and sports science provision to provide players with a benchmark of their current level and a clear individual training and development plan to work towards their personal goals.
           </p>
 
-          {/* Team Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-            {[
-              {
-                name: "Paul Smith",
-                role: "Founder & Lead Scout",
-                location: "Glasgow, Scotland",
-                bio: "A UEFA-qualified scout with over 20 years of experience in player development and talent identification.",
-                img: "/Images/trial1.png",
-                imgHover: "/Images/trial1-fun.png",
-              },
-              {
-                name: "Sarah McLean",
-                role: "Performance Coach",
-                location: "Edinburgh, Scotland",
-                bio: "Specialist in strength, conditioning, and injury prevention for developing athletes.",
-                img: "/team2.jpg",
-                imgHover: "/team2-fun.jpg",
-              },
-              {
-                name: "James Taylor",
-                role: "Technical Analyst",
-                location: "Manchester, England",
-                bio: "Experienced data analyst focused on technical and tactical performance insights.",
-                img: "/team3.jpg",
-                imgHover: "/team3-fun.jpg",
-              },
-              {
-                name: "Emily Watson",
-                role: "Sports Psychologist",
-                location: "London, England",
-                bio: "Helps players build confidence, manage pressure, and strengthen their mental resilience.",
-                img: "/team4.jpg",
-                imgHover: "/team4-fun.jpg",
-              },
-              {
-                name: "Mark Robertson",
-                role: "Tactical Coach",
-                location: "Aberdeen, Scotland",
-                bio: "Former academy coach bringing deep understanding of tactical frameworks and match preparation.",
-                img: "/team5.jpg",
-                imgHover: "/team5-fun.jpg",
-              },
-              {
-                name: "Hannah Lee",
-                role: "Physiotherapist",
-                location: "Dundee, Scotland",
-                bio: "Experienced physio supporting recovery, biomechanics, and long-term player well-being.",
-                img: "/team6.jpg",
-                imgHover: "/team6-fun.jpg",
-              },
-              {
-                name: "David Kerr",
-                role: "Athletic Development Lead",
-                location: "Perth, Scotland",
-                bio: "Focuses on speed, agility, and explosive movement development for youth players.",
-                img: "/team7.jpg",
-                imgHover: "/team7-fun.jpg",
-              },
-              {
-                name: "Lauren White",
-                role: "Player Liaison & Support",
-                location: "Glasgow, Scotland",
-                bio: "Dedicated to ensuring every player’s journey is guided, supported, and focused on holistic growth.",
-                img: "/team8.jpg",
-                imgHover: "/team8-fun.jpg",
-              },
-            ].map((member, i) => (
-              <div
-                key={i}
-                className="group relative rounded-xl p-6 text-left bg-slate-800/30 overflow-hidden transition-all duration-500"
-              >
-                {/* Gradient Overlay on Hover */}
-                <div className="absolute inset-0 bg-linear-to-b from-[#bfa008] to-black opacity-0 group-hover:opacity-100 transition-opacity duration-500 "></div>
-
-                {/* Image Container */}
-                <div className="relative w-full h-64 mb-6 rounded-lg overflow-hidden group">
-                  <Image
-                    src={member.img}
-                    alt={member.name}
-                    fill
-                    className="object-cover rounded-lg transition-opacity duration-500 group-hover:opacity-0"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    priority
-                  />
-                  <Image
-                    src={member.imgHover}
-                    alt={member.name}
-                    fill
-                    className="object-cover rounded-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-
-                {/* Text Content */}
-                <div className="relative z-10">
-                  <h3 className="text-xl font-semibold text-white">{member.name}</h3>
-                  <p className="text-[#daba0b] text-sm mb-2">{member.role}</p>
-                  <p className="text-gray-400 text-sm italic mb-3">{member.location}</p>
-                  <p className="text-gray-300 text-sm">{member.bio}</p>
-                </div>
-              </div>
-            ))}
+          {/* Signature */}
+          <div className="mt-8">
+            <p className="text-[#daba0b] text-lg font-semibold tracking-wide">
+              Paul Cooper
+            </p>
+            <p className="text-white/50 text-sm tracking-wide">
+              Founder and Head of Player Development
+            </p>
           </div>
         </div>
-      </section>
+
+      </div>
+
+      {/* Subtle glow effect */}
+      <div className="absolute -top-20 -right-20 w-72 h-72 bg-[#daba0b]/10 blur-3xl"></div>
+    </div>
+  </div>
+</section>
+
+
+{/* === OUR PARTNERS === */}
+<section id="partners" className="py-24 bg-black text-center overflow-hidden">
+  <div className="container mx-auto px-6">
+    
+    {/* Header */}
+    <AnimatedHeader className={`${afacad.className} mt-0`}>
+      Our Partners
+    </AnimatedHeader>
+
+    <p className="text-gray-400 max-w-2xl mx-auto mb-16 text-sm md:text-base">
+      Collaborating with specialists across all areas of player development.
+    </p>
+
+    {/* MOBILE: Scrollable Row */}
+    <div className="flex md:hidden gap-10 overflow-x-auto no-scrollbar px-2">
+      {partners.map((partner, i) => (
+        <a
+          key={i}
+          href={partner.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shrink-0"
+        >
+          <Image
+            src={partner.logo}
+            alt={partner.name}
+            width={120}
+            height={60}
+            className="h-16 w-auto opacity-70 grayscale"
+          />
+        </a>
+      ))}
+    </div>
+
+    {/* DESKTOP: Infinite Scroll */}
+    <div className="hidden md:block relative overflow-hidden">
+      {/* LEFT FADE */}
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-32 bg-linear-to-r from-black to-transparent z-10"></div>
+
+      {/* RIGHT FADE */}
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-32 bg-linear-to-l from-black to-transparent z-10"></div>
+
+      {/* SCROLLING ROW */}
+      <div className="flex gap-12 md:gap-16 animate-scroll whitespace-nowrap min-w-max">
+        
+        {[...partners, ...partners, ...partners].map((partner, i) => (
+          <a
+            key={i}
+            href={partner.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group shrink-0"
+          >
+            <Image
+              src={partner.logo}
+              alt={partner.name}
+              width={160}
+              height={80}
+              className="h-18 md:h-20 w-auto opacity-60 grayscale 
+                        group-hover:opacity-100 group-hover:grayscale-0 
+                        transition duration-300"
+            />
+          </a>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
 
@@ -510,8 +547,8 @@ export default function Home() {
       {/* Pricing Section */}
     <section id="pricing" className="py-20 bg-linear-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] text-white">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-5xl font-bold text-center mb-4">
-          Our Scouting Packages
+        <h2 className={`${afacad.className} text-5xl font-bold text-center mb-4`}>
+          Scouting Packages
         </h2>
         <p className="text-center text-gray-300 mb-20">
           Choose the right development pathway with our expert-led scouting services.
@@ -577,7 +614,7 @@ export default function Home() {
     
     {/* LEFT TEXT */}
     <div>
-      <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+      <h2 className={`${afacad.className} text-4xl md:text-5xl font-bold leading-tight mb-6 text-white`}>
         Trusted by players. <br /> Proven by results.
       </h2>
 
@@ -846,8 +883,7 @@ Scoutiv8 has been brilliant in helping us know what my son needs to assist his f
           <div className="mt-16 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between text-sm text-gray-400">
             <p>© 2025 Scoutivate</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white text-3xl text-white"><FaLinkedin /></a>
-              <a href="#" className="hover:text-white text-3xl text-white"><FaInstagram /></a>
+              <a href="https://www.instagram.com/scoutiv8?igsh=YWw3amNzcHJnMWc2" className="hover:text-white text-3xl text-white"><FaInstagram /></a>
             </div>
           </div>
 
