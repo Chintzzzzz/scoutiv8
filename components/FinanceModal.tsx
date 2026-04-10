@@ -58,19 +58,27 @@ export default function FinanceModal({
                 We are currently finalising our secure payment system.
                 To continue, please email us directly and we’ll assist you personally.
               </p>
-
+            {/* Gmail option */}
               <a
                 href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent("Scoutiv8 Booking Enquiry")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block bg-[#daba0b] text-black py-3 rounded-lg font-semibold hover:opacity-90 transition mb-4"
               >
-                Email Us to Continue
+                Email via Gmail
+              </a>
+
+              {/* Universal fallback */}
+              <a
+                href={`mailto:${email}?subject=${encodeURIComponent("Scoutiv8 Booking Enquiry")}`}
+                className="block border border-white/20 text-white py-3 rounded-lg hover:bg-white/10 transition"
+              >
+                Use Default Email App
               </a>
 
               <button
                 onClick={() => setOpen(false)}
-                className="text-gray-400 hover:text-white text-sm"
+                className="mt-6 text-gray-500 hover:text-gray-300 text-sm"
               >
                 Close
               </button>

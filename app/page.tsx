@@ -547,9 +547,10 @@ export default function Home() {
       {/* Pricing Section */}
     <section id="pricing" className="py-20 bg-linear-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] text-white">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className={`${afacad.className} text-5xl font-bold text-center mb-4`}>
-          Scouting Packages
-        </h2>
+        {/* Header */}
+    <AnimatedHeader className={`${afacad.className} mt-0`}>
+      Scouting Packages
+    </AnimatedHeader>
         <p className="text-center text-gray-300 mb-20">
           Choose the right development pathway with our expert-led scouting services.
         </p>
@@ -833,8 +834,14 @@ Scoutiv8 has been brilliant in helping us know what my son needs to assist his f
               <div>
                 <h3 className="text-sm font-semibold mb-4">Contact</h3>
                 <ul className="space-y-3 text-sm text-gray-300">
-                  <li><a href="mailto:info@scoutivate.com" className="hover:text-white">Email Us</a></li>
-                  <li><a href="#contact-form" className="hover:text-white">Contact Form</a></li>
+                  <li className="text-gray-300 text-sm">
+                    <a 
+                      href="mailto:ncu75afc@hotmail.com?subject=Scoutiv8 Enquiry" 
+                      className="hover:text-white"
+                    >
+                      ncu75afc@hotmail.com
+                    </a>
+                  </li>
                 </ul>
               </div>
 
@@ -871,9 +878,15 @@ Scoutiv8 has been brilliant in helping us know what my son needs to assist his f
               <div>
                 <h3 className="text-sm font-semibold mb-3">Contact</h3>
                 <ul className="space-y-2 text-sm text-gray-300">
-                  <li><a href="mailto:info@scoutivate.com" className="hover:text-white">Email Us</a></li>
-                  <li><a href="#contact-form" className="hover:text-white">Contact Form</a></li>
-                </ul>
+                  <li className="text-gray-300 text-sm">
+
+                    <a 
+                      href="mailto:ncu75afc@hotmail.com?subject=Scoutiv8 Enquiry" 
+                      className="hover:text-white"
+                    >
+                      ncu75afc@hotmail.com
+                    </a>
+                  </li>                </ul>
               </div>
             </div>
 
