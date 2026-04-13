@@ -88,7 +88,7 @@ function Card({ title, originalPrice, discountedPrice, features }: CardProps) {
         </ul>
 
         <FinanceModal
-        email="ncu75afc@hotmail.com"
+        email="Contact@scoutiv8.co.uk"
         trigger={  
         <button className="mt-8 w-full py-3 rounded-lg bg-[#daba0b] text-black font-semibold hover:bg-[#c6a507] transition">
           Get {title.split(" ")[0]} Package
@@ -145,7 +145,7 @@ export default function Home() {
             ))}
 
             <FinanceModal
-              email="ncu75afc@hotmail.com"
+              email="Contact@scoutiv8.co.uk"
               trigger={
                 <button className="bg-[#daba0b] text-black px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">
                   Book Session
@@ -185,7 +185,7 @@ export default function Home() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <FinanceModal
-              email="ncu75afc@hotmail.com"
+              email="Contact@scoutiv8.co.uk"
               trigger={
                 <button className="bg-[#daba0b] text-black px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
                   Get Your Report Now
@@ -770,7 +770,7 @@ Scoutiv8 has been brilliant in helping us know what my son needs to assist his f
             
             
             <FinanceModal
-              email="ncu75afc@hotmail.com"
+              email="Contact@scoutiv8.co.uk"
               trigger={
                 <button
                   className="
@@ -836,10 +836,10 @@ Scoutiv8 has been brilliant in helping us know what my son needs to assist his f
                 <ul className="space-y-3 text-sm text-gray-300">
                   <li className="text-gray-300 text-sm">
                     <a 
-                      href="mailto:ncu75afc@hotmail.com?subject=Scoutiv8 Enquiry" 
+                      href="mailto:Contact@scoutiv8.co.uk?subject=Scoutiv8 Enquiry" 
                       className="hover:text-white"
                     >
-                      ncu75afc@hotmail.com
+                      Contact@scoutiv8.co.uk
                     </a>
                   </li>
                 </ul>
@@ -881,10 +881,10 @@ Scoutiv8 has been brilliant in helping us know what my son needs to assist his f
                   <li className="text-gray-300 text-sm">
 
                     <a 
-                      href="mailto:ncu75afc@hotmail.com?subject=Scoutiv8 Enquiry" 
+                      href="mailto:Contact@scoutiv8.co.uk?subject=Scoutiv8 Enquiry" 
                       className="hover:text-white"
                     >
-                      ncu75afc@hotmail.com
+                      Contact@scoutiv8.co.uk
                     </a>
                   </li>                </ul>
               </div>
