@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Scoutiv8",
     images: [
       {
-        url: "/og-image.png", // now resolves correctly
+        url: "/og-image.jpg", // now resolves correctly
         width: 1200,
         height: 630,
         alt: "Scoutiv8",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Scoutiv8",
     description: "Professional scouting reports for grassroots footballers.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
