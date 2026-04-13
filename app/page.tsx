@@ -618,7 +618,7 @@ export default function Home() {
       <h2 className={`${afacad.className} text-4xl md:text-5xl font-bold leading-tight mb-6 text-white`}>
         Trusted by players. <br /> Proven by results.
       </h2>
-
+ 
       <p className="text-gray-300 mb-8 max-w-md">
         Our scouting insights, data-driven analysis and development planning
         have helped young athletes elevate their game and unlock new pathways.

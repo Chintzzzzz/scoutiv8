@@ -15,8 +15,37 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://scoutiv8.co.uk"),
+
   title: "Scoutiv8",
   description: "Professional scouting reports for grassroots footballers in Glasgow and nearby regions.",
+
+  icons: {
+    icon: "/icon.png",
+  },
+
+  openGraph: {
+    title: "Scoutiv8",
+    description: "Professional scouting reports for grassroots footballers.",
+    url: "https://scoutiv8.co.uk",
+    siteName: "Scoutiv8",
+    images: [
+      {
+        url: "/og-image.png", // now resolves correctly
+        width: 1200,
+        height: 630,
+        alt: "Scoutiv8",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Scoutiv8",
+    description: "Professional scouting reports for grassroots footballers.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
