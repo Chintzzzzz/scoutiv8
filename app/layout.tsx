@@ -17,6 +17,10 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://scoutiv8.co.uk"),
 
+  alternates: {
+    canonical: "https://scoutiv8.co.uk",
+  },
+
   title: "Scoutiv8",
   description: "Professional scouting reports for grassroots footballers in Glasgow and nearby regions.",
 
@@ -31,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "Scoutiv8",
     images: [
       {
-        url: "/og-image.jpg", // now resolves correctly
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Scoutiv8",
